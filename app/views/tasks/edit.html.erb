@@ -1,0 +1,10 @@
+<div class="container p-3">
+  <div class="row">
+    <h1>Edit <%= @task.title %></h1>
+  </div>
+  <%= render 'tasks/form' %>
+  <%= link_to tasks_path, class: "btn btn-secondary text-white" do %>
+    <i class="fa fa-backward" aria-hidden="true"></i>
+    Back
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<div class="container p-3">
+  <div class="row">
+    <h1>Tasks</h1>
+  </div>
+  <div class="row p-3">
+    <ul class="list-group">
+      <% @tasks.each do |task| %>
+      <li class="list-group-item">
+        <div class="custom-control custom-checkbox" id="tasks_lists">
+          <input type="checkbox" class="custom-control-input" id="task-<%= task.id %>" <%= 'checked' if task.completed %>>
+          <label for="task-<%= task.id %>" class="custom-control-label"><%= link_to task.title, task_path(task) %></label>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <%= link_to new_tasks_path, class: "btn btn-primary text-white" do %>
+    <i class="fa fa-plus" aria-hidden="true"></i>
+    Add a new task
+  <% end %>
+</div>

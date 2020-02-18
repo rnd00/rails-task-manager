@@ -1,0 +1,25 @@
+<div class="container p-3">
+  <div class="row">
+    <h1><%= @task.title %></h1>
+  </div>
+  <div class="card bg-light p-3 mb-3">
+    <p class="m-0"><%= @task.details %></p>
+  </div>
+  <div>
+    <p><%= @task.completed ? "You have completed this task" : "You have not yet completed this task" %></p>
+  </div>
+  <div class="row mt-3" id="nav-btn">
+    <%= link_to edit_task_path(@task), class: "btn btn-info text-white m-2" do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      Edit this task
+    <% end %>
+    <%= link_to task_path(@task), class: "btn btn-danger text-white m-2", method: :delete, data: { confirm: "Are you sure you want to delete #{@task.title}?" } do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+      Delete
+    <% end %>
+    <%= link_to tasks_path, class: "btn btn-secondary text-white m-2" do %>
+      <i class="fa fa-backward" aria-hidden="true"></i>
+      Back
+    <% end %>
+  </div>
+</div>
